@@ -45,7 +45,7 @@ if ( ! class_exists('Logs') ) {
      * @access public
      * @return void
      */
-    public function admin_enqueue_styles( $hook ) {
+    public static function admin_enqueue_styles( $hook ) {
       wp_register_style( 'log_viewer', plugin_dir_url( __DIR__ ) . '/style/log-viewer.css', '', Helpers::seravo_plugin_version() );
       wp_register_script( 'log_viewer', plugin_dir_url(__DIR__) . '/js/log-viewer.js', '', Helpers::seravo_plugin_version());
 
