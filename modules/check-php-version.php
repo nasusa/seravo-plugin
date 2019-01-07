@@ -63,7 +63,7 @@ if ( ! class_exists('CheckPHPVersion') ) {
 
               printf(
       			// translators: %1$s: current php version, %2$s: recommended php version
-      			__('The PHP version %1$s currently in use is lower than the recommended %2$s. Support and security updates might not be available for the version in use. <a target="blank" href="http://php.net/supported-versions.php">Read more</a>.', 'seravo'),
+      			__('The PHP version %1$s currently in use is lower than the recommended %2$s. An update is required to ensure support and security updates. Read our <a target="blank" href="https://help.seravo.com/en/knowledgebase/13/docs/107-set-your-site-to-use-newest-php-version">knowledgebase</a> article for instructions on how to update.', 'seravo'),
       			PHP_MAJOR_VERSION . '.' . PHP_MINOR_VERSION, $recommended_version
       		);
 

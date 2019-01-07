@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Seravo Must-use Plugin\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/seravo-plugin\n"
-"POT-Creation-Date: 2018-12-19T10:32:41+02:00\n"
-"PO-Revision-Date: 2018-12-19 10:41+0200\n"
+"POT-Creation-Date: 2019-01-07T13:05:25+02:00\n"
+"PO-Revision-Date: 2019-01-07 13:11+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -33,6 +33,32 @@ msgstr ""
 
 #. Author URI of the plugin
 msgid "https://seravo.com/"
+msgstr ""
+
+#: lib/mails-page.php:5 lib/domains-page.php:10
+msgid "Sorry, you are not allowed to access domains."
+msgstr "Sinulla ei ole oikeuksia verkkotunnusten hallintaan."
+
+#: lib/mails-page.php:36
+msgid "Source"
+msgstr ""
+
+#: lib/mails-page.php:37
+msgid "Destinations"
+msgstr ""
+
+#: lib/mails-page.php:157 modules/mails.php:25
+msgid "Mails"
+msgstr ""
+
+#: lib/mails-page.php:159
+#, fuzzy
+#| msgid "Domains routed to this WordPress site are listed below."
+msgid "Mail addresses with forwards on this WordPress site are listed below."
+msgstr "Tähän WordPress-sivustoon kytketyt verkkotunnukset on lueteltu alla."
+
+#: lib/mails-page.php:166
+msgid "Fetch Forwards"
 msgstr ""
 
 #: lib/seravo-postbox.php:133
@@ -143,37 +169,9 @@ msgstr "Viimeisin onnistunut päivitys"
 msgid "Latest Update Attempt"
 msgstr "Edellinen päivitysyritys"
 
-#: lib/updates-page.php:130
-msgid "Screenshots"
-msgstr "Kuvakaappaukset"
-
-#: lib/updates-page.php:141
-msgid "Current State"
-msgstr "Sivuston nykytila"
-
-#: lib/updates-page.php:142
-msgid "The Difference"
-msgstr "Eroavaisuudet"
-
-#: lib/updates-page.php:143
-msgid "Update Attempt"
-msgstr "Edellinen päivitysyritys"
-
-#: lib/updates-page.php:194
-msgid ""
-"No screenshots found. They will become available during the next attempted "
-"update."
-msgstr ""
-"Kuvakaappauksia ei löytynyt. Ne luodaan sivuston seuraavan päivityksen "
-"yhteydessä."
-
 #: lib/api.php:32 lib/api.php:61
 msgid "API call failed. Aborting. The error has been logged."
 msgstr "Rajapintayhteys epäonnistui. Virhe on lisätty lokiin."
-
-#: lib/domains-page.php:10
-msgid "Sorry, you are not allowed to access domains."
-msgstr "Sinulla ei ole oikeuksia verkkotunnusten hallintaan."
 
 #: lib/domains-page.php:71
 msgid "Primary Domain"
@@ -422,31 +420,36 @@ msgstr ""
 msgid "Save"
 msgstr "Tallenna"
 
-#: modules/logs.php:68 modules/logs.php:69 modules/logs.php:133
+#: modules/logs.php:68 modules/logs.php:69 modules/logs.php:125
 msgid "Logs"
 msgstr "Lokit"
 
-#: modules/logs.php:112
+#: modules/logs.php:110
 msgid "No logs found in <code>/data/log/</code>."
 msgstr "Lokeja ei löytynyt hakemistosta <code>/data/log/</code>."
 
-#: modules/logs.php:172
+#: modules/logs.php:164
 msgid "Filter"
 msgstr "Hae"
 
 #. translators: $s name of the logfile
-#: modules/logs.php:192
+#: modules/logs.php:184
 msgid "File %s does not exist or we don't have permissions to read it."
 msgstr ""
 "Tiedostoa %s ei ole olemassa tai käyttöoikeudet eivät riitä lukemaan sitä."
 
-#: modules/logs.php:197
+#: modules/logs.php:189
 msgid "Log empty"
 msgstr "Loki on tyhjä"
 
-#: modules/logs.php:199
+#: modules/logs.php:191
 msgid "Scroll to load more lines from the log."
 msgstr "Selaa ladataksesi lisää rivejä lokista."
+
+#. translators: $s full path of the logfile
+#: modules/logs.php:202
+msgid "Full log files can be found on the server in the path %s."
+msgstr ""
 
 #: modules/instance-switcher.php:119
 msgid "Now in"
@@ -899,13 +902,19 @@ msgid "Error: the nonce did not verify."
 msgstr "Virhe: kertakäyttöavain ei täsmännyt."
 
 #. translators: %1$s: current php version, %2$s: recommended php version
-#: modules/check-php-version.php:49
+#: modules/check-php-version.php:66
 msgid ""
-"The PHP version %1$s currently in use is lower than the recommended %2$s. "
-"Support and security updates might not be available for the version in use. "
-"<a target=\"blank\" href=\"http://php.net/supported-versions.php\">Read "
-"more</a>."
+"The PHP version %1$s currently in use is lower than the recommended %2$s. An "
+"update is required to ensure support and security updates. Read our <a "
+"target=\"blank\" href=\"https://help.seravo.com/en/knowledgebase/13/docs/107-"
+"set-your-site-to-use-newest-php-version\">knowledgebase</a> article for "
+"instructions on how to update."
 msgstr ""
+"Käytössä oleva PHP versio %1$s on alempi kuin suositeltu %2$s. On "
+"suositeltavaa suorittaa päivitys tietoturvapäivitysten varmistamiseksi. Lue "
+"ohjeet uusimpaan PHP versioon siirtymisestä <a target=\"blank\" href="
+"\"https://help.seravo.com/fi/knowledgebase/13/docs/107-uusimpaan-php-"
+"versioon-siirtyminen\">tietopankistamme</a>."
 
 #: modules/reports.php:34
 msgid "HTTP Request Statistics"
@@ -1048,6 +1057,30 @@ msgstr "WordPressin ydin"
 #: modules/updates.php:50
 msgid "Updates"
 msgstr "Päivitykset"
+
+#: modules/updates.php:70 modules/updates.php:74
+msgid "Screenshots"
+msgstr "Kuvakaappaukset"
+
+#: modules/updates.php:86
+msgid "The Difference"
+msgstr "Eroavaisuudet"
+
+#: modules/updates.php:148
+msgid ""
+"No screenshots found. They will become available during the next attempted "
+"update."
+msgstr ""
+"Kuvakaappauksia ei löytynyt. Ne luodaan sivuston seuraavan päivityksen "
+"yhteydessä."
+
+#: modules/updates.php:168
+msgid "Current State"
+msgstr "Sivuston nykytila"
+
+#: modules/updates.php:169
+msgid "Update Attempt"
+msgstr "Edellinen päivitysyritys"
 
 #: modules/backups.php:36 modules/backups.php:90
 msgid "Backups"

@@ -45,7 +45,7 @@ if ( ! class_exists('Seravo_Notification') ) {
 
     public static function load() {
       if ( is_admin() ) {
-        add_action( 'admin_enqueue_scripts', array(  __CLASS__,  'enqueue_notification_scripts' ) );
+        add_action( 'admin_enqueue_scripts', array( __CLASS__, 'enqueue_notification_scripts' ) );
       }
     }
   }
